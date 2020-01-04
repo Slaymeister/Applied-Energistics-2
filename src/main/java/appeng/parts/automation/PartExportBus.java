@@ -353,6 +353,10 @@ public class PartExportBus extends PartSharedItemBus implements ICraftingRequest
 		{
 			this.nextSlot = ( this.nextSlot + x ) % this.availableSlots();
 		}
+		if( schedulingMode == SchedulingMode.DEFAULT && this.didSomething == true )
+		{
+			this.nextSlot = 0;
+		}
 	}
 
 	@Override
